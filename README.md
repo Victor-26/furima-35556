@@ -41,7 +41,7 @@
 - has_one :purchase_info
 
 
-## purchase_info テーブル
+## purchase_infos テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
@@ -54,7 +54,7 @@
 - belongs_to :item
 - has_one :delivery_address
 
-## delivery_address テーブル
+## delivery_addresses テーブル
 
 |  Column       |   Type     | Options                        |
 | ------------- | ---------- | -----------------------------  |
