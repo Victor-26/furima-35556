@@ -31,8 +31,8 @@
 | condition_id   | integer    | null: false                    |
 | which_pay_id   | integer    | null: false                    |
 | prefecture_id  | integer    | null: false                    |                        
-| period-id      | integer    | null: false                    |                            
-| price          | string     | null: false                    |                     
+| period_id      | integer    | null: false                    |                            
+| price          | integer    | null: false                    |                     
 | user           | references | null: false, foreign_key: true |
 
 ### Association
@@ -60,7 +60,7 @@
 | ------------- | ---------- | -----------------------------  |
 | postcode      |   string   | null: false                    |
 | prefecture_id |  integer   | null: false                    |
-| city_etc      |   text     | null: false                    |
+| city_etc      |   string   | null: false                    |
 | place_num     |   string   | null: false                    |
 | building_name |   string   |                                |                        
 | phone_num     |   string   | null: false                    |                            
