@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
         it "lastname_nameに英字を含むと登録できない" do
           @user.last_name = 'tanaka' 
           @user.valid?
-          expect(@user.errors.full_messages).to include("Last name は英数はやめとけ")
+          expect(@user.errors.full_messages).to include("Last name はひらがな、漢字、カタカナで入力して下さい。")
         end 
 
         it "first_nameが空だと登録できない" do
@@ -88,7 +88,7 @@ RSpec.describe User, type: :model do
         it "first_nameに英字を含むと登録できない" do
           @user.first_name = 'Tanaka' 
           @user.valid?
-          expect(@user.errors.full_messages).to include("First name は英数はやめとけ。")
+          expect(@user.errors.full_messages).to include("First name はひらがな、漢字、カタカナで入力して下さい。")
         end  
 
         it "last_kanaが空だと登録できない" do
