@@ -65,3 +65,7 @@ gem 'pry-rails'
 gem 'factory_bot_rails'
 
 gem 'faker'
+
+group :development do
+  gem 'rubocop', require: false
+end
