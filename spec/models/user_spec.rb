@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
         it 'passwordの構成は英数混合６文字以上でないといけない' do
           @user.password = '111111' 
           @user.valid?
-          expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+          expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
         end  
 
         it 'passwordの文字数は６文字以上でないと登録できない' do
@@ -67,10 +67,22 @@ RSpec.describe User, type: :model do
           expect(@user.errors.full_messages).to include("Last name can't be blank")
         end  
 
+        it "lastname_nameに英字を含むと登録できない" do
+          @user.last_name = 'tanaka' 
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Last name は英数はやめとけ")
+        end 
+
         it "first_nameが空だと登録できない" do
           @user.first_name = '' 
           @user.valid?
           expect(@user.errors.full_messages).to include("First name can't be blank")
+        end  
+
+        it "first_nameに英字を含むと登録できない" do
+          @user.first_name = 'Tanaka' 
+          @user.valid?
+          expect(@user.errors.full_messages).to include("First name は英数はやめとけ。")
         end  
 
         it "last_kanaが空だと登録できない" do
@@ -80,7 +92,7 @@ RSpec.describe User, type: :model do
         end  
 
         it "last_kanaには、カタカナ入力以外不可" do
-          @user.first_kana = '田中' 
+          @user.last_kana = '田中' 
           @user.valid?
           expect(@user.errors.full_messages).to include("Last kana はカタカナで入力して下さい。")
         end  
