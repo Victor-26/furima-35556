@@ -61,11 +61,24 @@ RSpec.describe User, type: :model do
           expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
         end  
 
+        it 'passwordの構成は英数混合６文字以上でないといけない' do
+          @user.password = 'abcdefg' 
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        end  
+
         it 'passwordの文字数は６文字以上でないと登録できない' do
           @user.password = '11111' 
           @user.valid?
           expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
         end  
+
+        it 'passwordの構成は半角でなければならない' do
+          @user.password = '１１１１１１あb' 
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        end  
+
 
         it "lastnameが空だと登録できない" do
           @user.last_name = '' 
