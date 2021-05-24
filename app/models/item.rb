@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :category_id,:condition_id,:which_pay_id,:prefecture_id,:period_id,:price,:image
+    validates :category_id,:condition_id,:which_pay_id,:prefecture_id,:period_id,:price,:image,:name,:explanation
     end 
   
     validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
@@ -21,4 +21,5 @@ class Item < ApplicationRecord
     belongs_to :condition
     belongs_to :which_pay
     belongs_to :period
+    
 end
