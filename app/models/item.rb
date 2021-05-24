@@ -1,8 +1,4 @@
 class Item < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
   belongs_to :user
   has_one_attached :image
 
@@ -13,7 +9,7 @@ class Item < ApplicationRecord
     validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
     validates :category_id, numericality: { other_than: 0, message: "can't be blank" }
     validates :condition_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :which_id, numericality: { other_than: 0, message: "can't be blank" }
+    validates :which_pay_id, numericality: { other_than: 0, message: "can't be blank" }
     validates :period_id, numericality: { other_than: 0, message: "can't be blank" }
     
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}  
@@ -25,10 +21,4 @@ class Item < ApplicationRecord
     belongs_to :condition
     belongs_to :which_pay
     belongs_to :period
-  
-
-  
-
-
-         
 end

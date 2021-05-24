@@ -1,4 +1,4 @@
-class Which_pay < ActiveHash::Base
+class WhichPay < ActiveHash::Base
   include ActiveHash::Associations
   has_many :items
 
