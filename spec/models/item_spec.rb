@@ -51,7 +51,7 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include("Prefecture can't be blank")
         end  
 
-        it "発送元地域が選択されていないとと登録できない" do
+        it "発送までの日数が選択されていないとと登録できない" do
           @item.period_id = '' 
           @item.valid?
           expect(@item.errors.full_messages).to include("Period can't be blank")
