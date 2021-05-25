@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create]
   
   def index
+    @items = Item.order("created_at DESC") #orderを鵜買う際はallは省略できる
   end
 
   def new
@@ -16,6 +17,8 @@ class ItemsController < ApplicationController
        render :new
    end
   end
+
+
 
   
   private
