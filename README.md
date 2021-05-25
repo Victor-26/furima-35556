@@ -26,7 +26,7 @@
 |  Column        |   Type     | Options                        |
 | ---------------| ---------- | -----------------------------  |
 |  name          |   string   | null: false                    |
-| explanation    |   text     | Options                        |
+| explanation    |   text     | null: false                    |
 | category_id    | integer    | null: false                    |
 | condition_id   | integer    | null: false                    |
 | which_pay_id   | integer    | null: false                    |
