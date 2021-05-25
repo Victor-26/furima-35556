@@ -28,31 +28,31 @@ RSpec.describe Item, type: :model do
         end  
 
         it "カテゴリーで---が選択されている場合に登録できない" do
-          @item.category_id = '0' 
+          @item.category_id = 0
           @item.valid?
           expect(@item.errors.full_messages).to include("Category can't be blank")
         end  
 
         it "商品の状態で---が選択されている場合に登録できないい" do
-          @item.condition_id = '0' 
+          @item.condition_id = 0
           @item.valid?
           expect(@item.errors.full_messages).to include("Condition can't be blank")
         end  
        
         it "配送料の負担で---が選択されている場合に登録できない" do
-          @item.which_pay_id = '0' 
+          @item.which_pay_id = 0 
           @item.valid?
           expect(@item.errors.full_messages).to include("Which pay can't be blank")
         end  
 
         it "発送元地域で---が選択されている場合に登録できない" do
-          @item.prefecture_id = '0' 
+          @item.prefecture_id = 0 
           @item.valid?
           expect(@item.errors.full_messages).to include("Prefecture can't be blank")
         end  
 
         it "発送までの日数で---が選択されている場合に登録できない" do
-          @item.period_id = '0' 
+          @item.period_id = 0
           @item.valid?
           expect(@item.errors.full_messages).to include("Period can't be blank")
         end  
