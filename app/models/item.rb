@@ -6,7 +6,7 @@ class Item < ApplicationRecord
     validates :category_id,:condition_id,:which_pay_id,:prefecture_id,:period_id,:price,:image,:name,:explanation
     end 
    
-  with_options numericality: {other_than: 0, message: "can't be blank"} do
+  with_options numericality: {other_than: 1, message: "can't be blank"} do
     validates :prefecture_id 
     validates :category_id
     validates :condition_id
