@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create]
   
   def index
+    @items = Item.all
   end
 
   def new
@@ -16,6 +17,12 @@ class ItemsController < ApplicationController
        render :new
    end
   end
+
+  def which_pay
+    @item = Item.find_by(which_pay_id: params[:id])
+    @items = Item.where(which_pay_id: params[:id]).order('created_at DESC')
+  end
+  
 
   
   private
