@@ -26,7 +26,8 @@ class ItemsController < ApplicationController
 
   # def edit
   #   @item = Item.find(params[:id])
-  # end
+  # end  <before_action :set_item, except: [:index, :new, :create]を記述したため不要になった>
+  #＊復習しやすいためにあえてコメントアウトにして残しています
 
   def update   
     @item = Item.find(params[:id]) 
