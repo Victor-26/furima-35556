@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
   #＊復習しやすいためにあえてコメントアウトにして残しています
 
   def update   
-    @item = Item.find(params[:id]) 
+    # @item = Item.find(params[:id]) ＊復習しやすいためにあえてコメントアウトにして残しています
     if @item.update(item_params)     
       redirect_to item_path
      else
