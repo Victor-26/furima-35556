@@ -1,4 +1,4 @@
-class Cmbine
+class Combine
   include ActiveModel::Model
   attr_accessor :postcode, :prefecture_id , :city_etc, :place_num , :building_name, :phone_num , :purchase_info_id, :user_id, :item_id
 
