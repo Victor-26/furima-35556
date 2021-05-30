@@ -1,3 +1,3 @@
 class DeliveryAddress < ApplicationRecord
-  belongs_to :pupurchase_info
+  belongs_to :purchase_info
 end
