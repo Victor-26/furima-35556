@@ -3,13 +3,13 @@ class Combine
   attr_accessor :postcode, :prefecture_id , :city_etc, :place_num , :building_name, :phone_num , :user_id, :item_id
 
   with_options presence: true do
-    validates :postcode
+    validates :postcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "には-(ハイフン)が必要です"}
     validates :city_etc
     validates :place_num 
-    validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank"}
+    validates :prefecture_id, numericality: {other_than: 0, message: "都道府県を選択してください"}
     validates :user_id
     validates :item_id
-    validates :phone_num,format: { with: /\A[0-9０-９]+\z/, message: 'は半角で入力して下さい。'}
+    validates :phone_num,format: { with: /\A\d{10,11}\z/, message: 'は半角11桁以内で入力して下さい。'}
   end  
 
   def save
