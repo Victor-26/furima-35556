@@ -1,6 +1,6 @@
 class PurchaseInfoController < ApplicationController
 
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item, only: [:index, :create,:show]
 
   def index
   @combine = Combine.new
@@ -16,6 +16,9 @@ class PurchaseInfoController < ApplicationController
     else
       render :index
     end
+  end
+
+  def show
   end
     
 

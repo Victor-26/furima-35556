@@ -20,9 +20,7 @@ class ItemsController < ApplicationController
    end
   end
 
-  # def show
-  #   @item = Item.find(params[:id])
-  # end
+
 
   # def edit
   #   @item = Item.find(params[:id])
@@ -63,5 +61,7 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to root_path unless current_user == @item.user
   end
+
+ 
 
 end
