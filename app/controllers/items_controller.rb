@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: [ :edit,:update,:destroy]
   
   def index
-    @items = Item.order("created_at DESC") #orderを鵜買う際はallは省略できる
+    @items = Item.order("created_at DESC") #orderを使う際はallは省略できる
   end
 
   def new
@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-   
   end
 
 

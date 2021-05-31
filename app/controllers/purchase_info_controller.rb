@@ -1,6 +1,7 @@
 class PurchaseInfoController < ApplicationController
 
   before_action :set_item, only: [:index, :create,:show]
+  before_action :authenticate_user!
 
   def index
   @combine = Combine.new
@@ -41,6 +42,10 @@ private
           currency: 'jpy'                
         )
   end      
+
+  
+
+
 
 end
 
