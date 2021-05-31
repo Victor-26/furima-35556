@@ -75,6 +75,18 @@ RSpec.describe Combine, type: :model do
           expect(@combine.errors.full_messages).to include("Token can't be blank")
         end
 
+        it "user_idは空では登録できない" do
+          @combine.user_id = nil
+          @combine.valid?
+          expect(@combine.errors.full_messages).to include("User can't be blank")
+        end
+
+        it "item_idは空では登録できない" do
+          @combine.item_id = nil
+          @combine.valid?
+          expect(@combine.errors.full_messages).to include("Item can't be blank")
+        end
+
         
 
 
