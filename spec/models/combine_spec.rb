@@ -69,6 +69,14 @@ RSpec.describe Combine, type: :model do
           expect(@combine.errors.full_messages).to include("Phone num は半角11桁以内で入力して下さい。")
         end 
 
+        it "tokenが空では登録できないこと" do
+          @combine.token = nil
+          @combine.valid?
+          expect(@combine.errors.full_messages).to include("Token can't be blank")
+        end
+
+        
+
 
 
         
