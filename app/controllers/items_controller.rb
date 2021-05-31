@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
   before_action :set_item, except: [:index, :new, :create]
   before_action :move_to_index, only: [ :edit,:update,:destroy]
-  
+  before_action :cannot_edit, only: [:edit]
+
+
   def index
     @items = Item.order("created_at DESC") #orderを使う際はallは省略できる
   end
@@ -24,9 +26,8 @@ class ItemsController < ApplicationController
   end
 
 
-  # def edit
-  #   @item = Item.find(params[:id])
-  # end  <before_action :set_item, except: [:index, :new, :create]を記述したため不要になった>
+  def edit
+  end  #<before_action :set_item, except: [:index, :new, :create]を記述したため不要になった>
   #＊復習しやすいためにあえてコメントアウトにして残しています
 
   def update   
@@ -64,6 +65,11 @@ class ItemsController < ApplicationController
     redirect_to root_path unless current_user == @item.user
   end
 
+  def cannot_edit
+    if user_signed_in? && @item.purchase_info 
+      redirect_to root_path 
+      end
+    end
  
 
 end
