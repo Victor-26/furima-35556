@@ -9,7 +9,6 @@ class PurchaseInfoController < ApplicationController
 
   def index
   @combine = Combine.new
-  # @item =  Item.find(params[:item_id])
   end 
 
   def create
