@@ -2,6 +2,10 @@ class PurchaseInfoController < ApplicationController
 
   before_action :set_item, only: [:index, :create,:show]
   before_action :authenticate_user!
+  before_action :move_to_root_path, only: [:index, :create]
+  before_action :cannot_buy, only: [:index, :create]
+
+
 
   def index
   @combine = Combine.new
@@ -41,7 +45,19 @@ private
           card: purchase_info_params[:token],    
           currency: 'jpy'                
         )
-  end      
+  end   
+  
+  def move_to_root_path
+    if current_user == @item.user
+    redirect_to root_path 
+    end
+  end
+
+  def cannot_buy
+  if user_signed_in? && @item.purchase_info 
+    redirect_to root_path 
+    end
+  end
 
   
 
