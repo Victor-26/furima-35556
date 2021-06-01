@@ -1,5 +1,4 @@
 class PurchaseInfoController < ApplicationController
-
   before_action :set_item, only: [:index, :create,:show]
   before_action :authenticate_user!
   before_action :move_to_root_path, only: [:index, :create]
@@ -53,12 +52,11 @@ private
   end
 
   def cannot_buy
-  if user_signed_in? && @item.purchase_info 
+  if user_signed_in? || @item.purchase_info.present?
+    binding.pry
     redirect_to root_path 
     end
   end
-
-  
 
 
 
