@@ -43,13 +43,9 @@ class ItemsController < ApplicationController
     # @item = Item.find(params[:id])＊復習しやすいためにあえてコメントアウトにして残しています
      @item.destroy
      redirect_to root_path
-   end  
+  end  
 
   
-
-
-
-
   
   private
 
@@ -66,7 +62,7 @@ class ItemsController < ApplicationController
   end
 
   def cannot_edit
-    if user_signed_in? && @item.purchase_info 
+    if user_signed_in? && @item.purchase_info.present?
       redirect_to root_path 
       end
     end
