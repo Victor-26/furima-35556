@@ -52,7 +52,7 @@ private
   end
 
   def cannot_buy
-  if user_signed_in? || @item.purchase_info.present?
+  if @item.purchase_info.present?
     redirect_to root_path 
     end
   end
