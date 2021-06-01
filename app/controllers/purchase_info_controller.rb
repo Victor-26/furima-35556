@@ -20,7 +20,7 @@ class PurchaseInfoController < ApplicationController
       render :index
     end
   end
-  # heroku config:unset "間違えた名前
+
 
 private
 
