@@ -53,7 +53,6 @@ private
 
   def cannot_buy
   if user_signed_in? || @item.purchase_info.present?
-    binding.pry
     redirect_to root_path 
     end
   end
