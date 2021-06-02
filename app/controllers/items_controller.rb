@@ -62,9 +62,6 @@ class ItemsController < ApplicationController
   end
 
   def cannot_edit
-    # if user_signed_in? && @item.purchase_info.present?
-    #   redirect_to root_path 
-    #   end
     if current_user.id != @item.user.id || @item.purchase_info.present?
     end  
   end
