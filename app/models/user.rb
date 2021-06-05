@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
    has_many :items
-   has_many :purchase_infos  
+   has_many :purchase_infos
+   has_many :messages 
 
     with_options presence: true do
     validates :nickname,:last_name,:first_name,:last_kana,:first_kana,:birth_date

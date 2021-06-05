@@ -142,7 +142,7 @@
 /* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
+  width: 80vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
@@ -204,4 +204,35 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+.messagelist{
+  color:#3CCACE;
+  font-size: 20px;
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+form input[type="submit"] {
+  background-color: #57C3E9;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+form input[type="submit"]:hover {
+  background-color: #84d3ef;
+}
+.messages {
+  padding: 5px;
+  margin-top: 15px;
+  text-align: left;
 }
