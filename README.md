@@ -16,7 +16,7 @@
 
 
 ### Association
-
+  １
 - has_many :items
 - has_many :purchase_infos
 
@@ -59,7 +59,7 @@
 |  Column       |   Type     | Options                        |
 | ------------- | ---------- | -----------------------------  |
 | postcode      |   string   | null: false                    |
-| prefecture_id |  integer   | null: false                    |
+| prefecture_id |  integer   | null: false                    | 
 | city_etc      |   string   | null: false                    |
 | place_num     |   string   | null: false                    |
 | building_name |   string   |                                |                        
