@@ -188,6 +188,7 @@
   display: flex;
   justify-content: space-between;
   width: 50vw;
+  
 
 }
 
@@ -236,3 +237,13 @@ form input[type="submit"]:hover {
   margin-top: 15px;
   text-align: left;
 }
+
+.messagebox{
+text-align: left;
+border:1px solid #2096f3;
+padding: 10px;
+border-radius: 10px;
+margin: 15px;
+
+}
+

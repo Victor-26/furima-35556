@@ -2,7 +2,10 @@ class MessagesController < ApplicationController
   
   def create
     @message = Message.create(message_params)
-    redirect_to "/items/#{@message.item.id}" 
+    # redirect_to "/items/#{@message.item.id}" 
+    if @message.save
+      ActionCable.server.broadcast 'message_channel', content: @message
+    end
   end
 
   private
