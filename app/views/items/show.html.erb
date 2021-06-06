@@ -79,6 +79,7 @@
   <%# /商品の概要 %>
 
   <div class="comment-box">
+
     <%= form_with model: [@item, @message]  do |form| %>
         <%= form.text_area :text, placeholder: "質問をする"%>
         <%= form.submit "送信" %>
@@ -102,6 +103,7 @@
       </div>
       <% end %>
     </div>
+
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
