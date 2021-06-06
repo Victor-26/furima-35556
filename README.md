@@ -16,7 +16,7 @@
 
 
 ### Association
-  １
+  
 - has_many :items
 - has_many :purchase_infos
 
