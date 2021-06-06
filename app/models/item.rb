@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase_info
   has_one_attached :image
+  has_many :messages
 
   with_options presence: true do
     validates :category_id,:condition_id,:which_pay_id,:prefecture_id,:period_id,:price,:image,:name,:explanation
